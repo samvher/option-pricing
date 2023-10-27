@@ -1,3 +1,10 @@
+"""Various methods for pricing European call and put options.
+
+Based on Excel materials provided in the MITx course 15.435x (Derivatives Markets: Advanced Modeling and Strategies).
+
+Author: Sam van Herwaarden <samvherwaarden@gmail.com>
+"""
+
 import math
 import scipy
 
@@ -122,7 +129,7 @@ def binom_tree(mu, sigma, r, div, s0, t, k, option_type, n):
         n: number of steps in the binomial tree
     
     Returns:
-        float, float: tree describing stock price evolution, tree describing option price evolution
+        ([[float]], [[float]]): (tree describing stock price evolution, tree describing option price evolution)
     """
     assert option_type in ["call", "put"]
     
